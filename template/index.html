@@ -1,0 +1,219 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Вход / Регистрация</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      z-index: 10;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+      font-weight: 700;
+      color: #333;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background-color: #6a11cb;
+      border-color: #6a11cb;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #2575fc;
+      border-color: #2575fc;
+    }
+
+    .toggle-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+
+    .toggle-buttons button {
+      background: none;
+      border: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #888;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 6px;
+      transition: 0.3s;
+    }
+
+    .toggle-buttons button.active {
+      color: #333;
+      border-color: #6a11cb;
+    }
+
+    .form-section {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .form-section.active {
+      display: block;
+    }
+
+    small {
+      font-size: 0.85rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .background-circles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      animation: fadeOut 1.5s linear forwards;
+    }
+
+    @keyframes fadeOut {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100">
+
+  <!-- Анимированный фон -->
+  <div class="background-circles" id="background-circles"></div>
+
+  <!-- Контейнер формы -->
+  <div class="form-container position-relative">
+    <div class="toggle-buttons">
+      <button id="loginBtn" class="active" onclick="toggleForm('login')">Вход</button>
+      <button id="registerBtn" onclick="toggleForm('register')">Регистрация</button>
+    </div>
+
+    <!-- Форма входа -->
+    <div id="loginForm" class="form-section active">
+      <h2 class="text-center mb-4">Вход</h2>
+      <form method="post">
+        <!-- {% csrf_token %} -->
+        <div class="mb-3">
+          <label class="form-label">Имя пользователя или Email</label>
+          <input type="text" name="username" class="form-control" placeholder="Введите логин" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Пароль</label>
+          <input type="password" name="password" class="form-control" placeholder="Введите пароль" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Войти</button>
+      </form>
+    </div>
+
+    <!-- Форма регистрации -->
+    <div id="registerForm" class="form-section">
+      <h2 class="text-center mb-4">Регистрация</h2>
+      <form method="post">
+        <!-- {% csrf_token %} -->
+        <div class="mb-3">
+          <label class="form-label">Имя пользователя</label>
+          <input type="text" name="username" class="form-control" placeholder="Введите имя" required />
+          <small class="text-muted">Только латинские буквы</small>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" placeholder="Введите почту" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Пароль</label>
+          <input type="password" name="password" class="form-control" placeholder="Введите пароль" required />
+          <small class="text-muted">Латиница, цифры и спецсимволы</small>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Повторите пароль</label>
+          <input type="password" name="confirm_password" class="form-control" placeholder="Повторите пароль" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS: переключение форм и фон -->
+  <script>
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    function toggleForm(type) {
+      if (type === 'login') {
+        loginForm.classList.add('active');
+        registerForm.classList.remove('active');
+        loginBtn.classList.add('active');
+        registerBtn.classList.remove('active');
+      } else {
+        registerForm.classList.add('active');
+        loginForm.classList.remove('active');
+        registerBtn.classList.add('active');
+        loginBtn.classList.remove('active');
+      }
+    }
+
+    // Анимированные круги
+    const bg = document.getElementById('background-circles');
+    document.addEventListener('mousemove', (e) => {
+      const circle = document.createElement('div');
+      circle.classList.add('circle');
+      circle.style.left = `${e.clientX}px`;
+      circle.style.top = `${e.clientY}px`;
+      circle.style.width = `${Math.random() * 20 + 10}px`;
+      circle.style.height = circle.style.width;
+      bg.appendChild(circle);
+      setTimeout(() => {
+        circle.remove();
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

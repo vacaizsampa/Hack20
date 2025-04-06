@@ -1,0 +1,46 @@
+fragment VolonteerAttributes on _E_Volonteer {
+  id
+  __typename
+  nickName
+  person {
+    entityId
+  }
+}
+
+query searchVolonteer($cond: String) {
+  searchVolonteer(cond: $cond) {
+    elems {
+      ...VolonteerAttributes
+    }
+  }
+}
+
+mutation getForUpdateVolonteer($id: ID!) {
+  packet {
+    getVolonteer(id: $id) {
+      ...VolonteerAttributes
+    }
+  }
+}
+
+mutation createVolonteer($input: _CreateVolonteerInput!) {
+  packet {
+    createVolonteer(input: $input) {
+      ...VolonteerAttributes
+    }
+  }
+}
+
+mutation updateVolonteer($input: _UpdateVolonteerInput!) {
+  packet {
+    updateVolonteer(input: $input) {
+      ...VolonteerAttributes
+    }
+  }
+}
+
+mutation deleteVolonteer($id: ID!) {
+  packet {
+    deleteVolonteer(id: $id)
+  }
+}

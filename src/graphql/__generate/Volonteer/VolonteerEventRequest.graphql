@@ -1,0 +1,56 @@
+fragment VolonteerEventRequestAttributes on _E_VolonteerEventRequest {
+  id
+  __typename
+  aggregateRoot {
+    id
+  }
+  description
+  event {
+    entityId
+  }
+  statusForX {
+    code
+    reason
+  }
+  volonteer {
+    id
+  }
+}
+
+query searchVolonteerEventRequest($cond: String) {
+  searchVolonteerEventRequest(cond: $cond) {
+    elems {
+      ...VolonteerEventRequestAttributes
+    }
+  }
+}
+
+mutation getForUpdateVolonteerEventRequest($id: ID!) {
+  packet {
+    getVolonteerEventRequest(id: $id) {
+      ...VolonteerEventRequestAttributes
+    }
+  }
+}
+
+mutation createVolonteerEventRequest($input: _CreateVolonteerEventRequestInput!) {
+  packet {
+    createVolonteerEventRequest(input: $input) {
+      ...VolonteerEventRequestAttributes
+    }
+  }
+}
+
+mutation updateVolonteerEventRequest($input: _UpdateVolonteerEventRequestInput!) {
+  packet {
+    updateVolonteerEventRequest(input: $input) {
+      ...VolonteerEventRequestAttributes
+    }
+  }
+}
+
+mutation deleteVolonteerEventRequest($id: ID!) {
+  packet {
+    deleteVolonteerEventRequest(id: $id)
+  }
+}

@@ -1,0 +1,55 @@
+fragment EventAttributes on _E_Event {
+  id
+  __typename
+  aggregateRoot {
+    id
+  }
+  description
+  endDateTime
+  organization {
+    id
+  }
+  startDateTime
+  statusForX {
+    code
+    reason
+  }
+}
+
+query searchEvent($cond: String) {
+  searchEvent(cond: $cond) {
+    elems {
+      ...EventAttributes
+    }
+  }
+}
+
+mutation getForUpdateEvent($id: ID!) {
+  packet {
+    getEvent(id: $id) {
+      ...EventAttributes
+    }
+  }
+}
+
+mutation createEvent($input: _CreateEventInput!) {
+  packet {
+    createEvent(input: $input) {
+      ...EventAttributes
+    }
+  }
+}
+
+mutation updateEvent($input: _UpdateEventInput!) {
+  packet {
+    updateEvent(input: $input) {
+      ...EventAttributes
+    }
+  }
+}
+
+mutation deleteEvent($id: ID!) {
+  packet {
+    deleteEvent(id: $id)
+  }
+}

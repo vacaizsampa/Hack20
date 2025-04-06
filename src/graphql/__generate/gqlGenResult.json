@@ -1,0 +1,42 @@
+[
+  {
+    "aggregateName": "Organization",
+    "aggregateEntityList": [
+      {
+        "entitiyName": "Event",
+        "gqlStr": "fragment EventAttributes on _E_Event {\n  id\n  __typename\n  aggregateRoot {\n    id\n  }\n  description\n  endDateTime\n  organization {\n    id\n  }\n  startDateTime\n  statusForX {\n    code\n    reason\n  }\n}\n\nquery searchEvent($cond: String) {\n  searchEvent(cond: $cond) {\n    elems {\n      ...EventAttributes\n    }\n  }\n}\n\nmutation getForUpdateEvent($id: ID!) {\n  packet {\n    getEvent(id: $id) {\n      ...EventAttributes\n    }\n  }\n}\n\nmutation createEvent($input: _CreateEventInput!) {\n  packet {\n    createEvent(input: $input) {\n      ...EventAttributes\n    }\n  }\n}\n\nmutation updateEvent($input: _UpdateEventInput!) {\n  packet {\n    updateEvent(input: $input) {\n      ...EventAttributes\n    }\n  }\n}\n\nmutation deleteEvent($id: ID!) {\n  packet {\n    deleteEvent(id: $id)\n  }\n}\n"
+      }
+    ]
+  },
+  {
+    "aggregateName": "Organization",
+    "aggregateEntityList": [
+      {
+        "entitiyName": "Organization",
+        "gqlStr": "fragment OrganizationAttributes on _E_Organization {\n  id\n  __typename\n  name\n}\n\nquery searchOrganization($cond: String) {\n  searchOrganization(cond: $cond) {\n    elems {\n      ...OrganizationAttributes\n    }\n  }\n}\n\nmutation getForUpdateOrganization($id: ID!) {\n  packet {\n    getOrganization(id: $id) {\n      ...OrganizationAttributes\n    }\n  }\n}\n\nmutation createOrganization($input: _CreateOrganizationInput!) {\n  packet {\n    createOrganization(input: $input) {\n      ...OrganizationAttributes\n    }\n  }\n}\n\nmutation updateOrganization($input: _UpdateOrganizationInput!) {\n  packet {\n    updateOrganization(input: $input) {\n      ...OrganizationAttributes\n    }\n  }\n}\n\nmutation deleteOrganization($id: ID!) {\n  packet {\n    deleteOrganization(id: $id)\n  }\n}\n"
+      }
+    ]
+  },
+  {
+    "aggregateName": "Person",
+    "aggregateEntityList": [
+      {
+        "entitiyName": "Person",
+        "gqlStr": "fragment PersonAttributes on _E_Person {\n  id\n  __typename\n  birthDate\n  firstName\n  lastName\n}\n\nquery searchPerson($cond: String) {\n  searchPerson(cond: $cond) {\n    elems {\n      ...PersonAttributes\n    }\n  }\n}\n\nmutation getForUpdatePerson($id: ID!) {\n  packet {\n    getPerson(id: $id) {\n      ...PersonAttributes\n    }\n  }\n}\n\nmutation createPerson($input: _CreatePersonInput!) {\n  packet {\n    createPerson(input: $input) {\n      ...PersonAttributes\n    }\n  }\n}\n\nmutation updatePerson($input: _UpdatePersonInput!) {\n  packet {\n    updatePerson(input: $input) {\n      ...PersonAttributes\n    }\n  }\n}\n\nmutation deletePerson($id: ID!) {\n  packet {\n    deletePerson(id: $id)\n  }\n}\n"
+      }
+    ]
+  },
+  {
+    "aggregateName": "Volonteer",
+    "aggregateEntityList": [
+      {
+        "entitiyName": "Volonteer",
+        "gqlStr": "fragment VolonteerAttributes on _E_Volonteer {\n  id\n  __typename\n  nickName\n  person {\n    entityId\n  }\n}\n\nquery searchVolonteer($cond: String) {\n  searchVolonteer(cond: $cond) {\n    elems {\n      ...VolonteerAttributes\n    }\n  }\n}\n\nmutation getForUpdateVolonteer($id: ID!) {\n  packet {\n    getVolonteer(id: $id) {\n      ...VolonteerAttributes\n    }\n  }\n}\n\nmutation createVolonteer($input: _CreateVolonteerInput!) {\n  packet {\n    createVolonteer(input: $input) {\n      ...VolonteerAttributes\n    }\n  }\n}\n\nmutation updateVolonteer($input: _UpdateVolonteerInput!) {\n  packet {\n    updateVolonteer(input: $input) {\n      ...VolonteerAttributes\n    }\n  }\n}\n\nmutation deleteVolonteer($id: ID!) {\n  packet {\n    deleteVolonteer(id: $id)\n  }\n}\n"
+      },
+      {
+        "entitiyName": "VolonteerEventRequest",
+        "gqlStr": "fragment VolonteerEventRequestAttributes on _E_VolonteerEventRequest {\n  id\n  __typename\n  aggregateRoot {\n    id\n  }\n  description\n  event {\n    entityId\n  }\n  statusForX {\n    code\n    reason\n  }\n  volonteer {\n    id\n  }\n}\n\nquery searchVolonteerEventRequest($cond: String) {\n  searchVolonteerEventRequest(cond: $cond) {\n    elems {\n      ...VolonteerEventRequestAttributes\n    }\n  }\n}\n\nmutation getForUpdateVolonteerEventRequest($id: ID!) {\n  packet {\n    getVolonteerEventRequest(id: $id) {\n      ...VolonteerEventRequestAttributes\n    }\n  }\n}\n\nmutation createVolonteerEventRequest($input: _CreateVolonteerEventRequestInput!) {\n  packet {\n    createVolonteerEventRequest(input: $input) {\n      ...VolonteerEventRequestAttributes\n    }\n  }\n}\n\nmutation updateVolonteerEventRequest($input: _UpdateVolonteerEventRequestInput!) {\n  packet {\n    updateVolonteerEventRequest(input: $input) {\n      ...VolonteerEventRequestAttributes\n    }\n  }\n}\n\nmutation deleteVolonteerEventRequest($id: ID!) {\n  packet {\n    deleteVolonteerEventRequest(id: $id)\n  }\n}\n"
+      }
+    ]
+  }
+]

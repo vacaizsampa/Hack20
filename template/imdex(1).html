@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>✨ Мой Красивый To-Do List ✨</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right top, #d4fc79, #96e6a1);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .todo-container {
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 500px;
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .todo-container:hover {
+      transform: scale(1.01);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2f4858;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 2px solid #c8f2d0;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #67d68e;
+    }
+
+    .input-group button {
+      background-color: #67d68e;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .input-group button:hover {
+      background-color: #4ac06f;
+    }
+
+    ul {
+      list-style: none;
+      max-height: 300px;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    ul li {
+      background-color: #f0fff5;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+    }
+
+    ul li.completed {
+      text-decoration: line-through;
+      color: #999;
+      background-color: #e0f7e9;
+    }
+
+    ul li button {
+      background-color: transparent;
+      border: none;
+      font-size: 1.2rem;
+      color: #ff5e5e;
+      cursor: pointer;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #a3e7c3;
+      border-radius: 3px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="todo-container">
+    <h1>🌿 Мои задачи</h1>
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Введите новую задачу...">
+      <button onclick="addTask()">➕</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const taskText = input.value.trim();
+      if (!taskText) return;
+
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span onclick="toggleComplete(this)">${taskText}</span>
+        <button onclick="deleteTask(this)">✖</button>
+      `;
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
+    }
+
+    function toggleComplete(span) {
+      span.parentElement.classList.toggle("completed");
+    }
+
+    function deleteTask(button) {
+      button.parentElement.remove();
+    }
+  </script>
+
+</body>
+</html>

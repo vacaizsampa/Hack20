@@ -1,0 +1,1256 @@
+{
+  "aggList": [
+    {
+      "aggName": "Organization",
+      "entityList": [
+        {
+          "name": "Event",
+          "queryList": [
+            {
+              "queryAlias": "searchEvent",
+              "queryName": "searchEvent",
+              "queryType": "_E_Event",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Organization"
+                },
+                {
+                  "fieldAlias": "description",
+                  "fieldName": "description",
+                  "fieldPath": "description",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "endDateTime",
+                  "fieldName": "endDateTime",
+                  "fieldPath": "endDateTime",
+                  "fieldType": "_DateTime"
+                },
+                {
+                  "fieldAlias": "organization",
+                  "fieldName": "organization",
+                  "fieldPath": "organization",
+                  "fieldType": "Organization"
+                },
+                {
+                  "fieldAlias": "startDateTime",
+                  "fieldName": "startDateTime",
+                  "fieldPath": "startDateTime",
+                  "fieldType": "_DateTime"
+                },
+                {
+                  "fieldAlias": "statusForX",
+                  "fieldName": "statusForX",
+                  "fieldPath": "statusForX",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "code",
+                      "fieldName": "code",
+                      "fieldPath": "code",
+                      "fieldType": "String"
+                    },
+                    {
+                      "fieldAlias": "reason",
+                      "fieldName": "reason",
+                      "fieldPath": "reason",
+                      "fieldType": "String"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateEvent",
+              "mutationName": "getForUpdateEvent",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createEvent",
+              "mutationName": "createEvent",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "description",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "endDateTime",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "organization",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Organization",
+                        "refEntityName": "Organization"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "startDateTime",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "statusForX",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_G_SysStatusFields"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "code",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "reason",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateEvent",
+              "mutationName": "updateEvent",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "description",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "endDateTime",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "organization",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Organization",
+                        "refEntityName": "Organization"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "startDateTime",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "statusForX",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_G_SysStatusFields"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "code",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "reason",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Organization"
+                },
+                {
+                  "fieldAlias": "description",
+                  "fieldName": "description",
+                  "fieldPath": "description",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "endDateTime",
+                  "fieldName": "endDateTime",
+                  "fieldPath": "endDateTime",
+                  "fieldType": "_DateTime"
+                },
+                {
+                  "fieldAlias": "organization",
+                  "fieldName": "organization",
+                  "fieldPath": "organization",
+                  "fieldType": "Organization"
+                },
+                {
+                  "fieldAlias": "startDateTime",
+                  "fieldName": "startDateTime",
+                  "fieldPath": "startDateTime",
+                  "fieldType": "_DateTime"
+                },
+                {
+                  "fieldAlias": "statusForX",
+                  "fieldName": "statusForX",
+                  "fieldPath": "statusForX",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "code",
+                      "fieldName": "code",
+                      "fieldPath": "code",
+                      "fieldType": "String"
+                    },
+                    {
+                      "fieldAlias": "reason",
+                      "fieldName": "reason",
+                      "fieldPath": "reason",
+                      "fieldType": "String"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteEvent",
+              "mutationName": "deleteEvent",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": []
+        },
+        {
+          "name": "Organization",
+          "queryList": [
+            {
+              "queryAlias": "searchOrganization",
+              "queryName": "searchOrganization",
+              "queryType": "_E_Organization",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "name",
+                  "fieldName": "name",
+                  "fieldPath": "name",
+                  "fieldType": "String"
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateOrganization",
+              "mutationName": "getForUpdateOrganization",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createOrganization",
+              "mutationName": "createOrganization",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "name",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateOrganization",
+              "mutationName": "updateOrganization",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "name",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "name",
+                  "fieldName": "name",
+                  "fieldPath": "name",
+                  "fieldType": "String"
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteOrganization",
+              "mutationName": "deleteOrganization",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": [
+            {
+              "isCollection": true,
+              "fieldType": "Event",
+              "fieldName": "eventList",
+              "backRefereceAttributeName": "organization"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aggName": "Person",
+      "entityList": [
+        {
+          "name": "Person",
+          "queryList": [
+            {
+              "queryAlias": "searchPerson",
+              "queryName": "searchPerson",
+              "queryType": "_E_Person",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "birthDate",
+                  "fieldName": "birthDate",
+                  "fieldPath": "birthDate",
+                  "fieldType": "_Date"
+                },
+                {
+                  "fieldAlias": "firstName",
+                  "fieldName": "firstName",
+                  "fieldPath": "firstName",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "lastName",
+                  "fieldName": "lastName",
+                  "fieldPath": "lastName",
+                  "fieldType": "String"
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdatePerson",
+              "mutationName": "getForUpdatePerson",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createPerson",
+              "mutationName": "createPerson",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "birthDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_Date"
+                      },
+                      "inputType": "_Date"
+                    },
+                    {
+                      "inputName": "firstName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "lastName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updatePerson",
+              "mutationName": "updatePerson",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "birthDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_Date"
+                      },
+                      "inputType": "_Date"
+                    },
+                    {
+                      "inputName": "firstName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "lastName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "birthDate",
+                  "fieldName": "birthDate",
+                  "fieldPath": "birthDate",
+                  "fieldType": "_Date"
+                },
+                {
+                  "fieldAlias": "firstName",
+                  "fieldName": "firstName",
+                  "fieldPath": "firstName",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "lastName",
+                  "fieldName": "lastName",
+                  "fieldPath": "lastName",
+                  "fieldType": "String"
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deletePerson",
+              "mutationName": "deletePerson",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": []
+        }
+      ]
+    },
+    {
+      "aggName": "Volonteer",
+      "entityList": [
+        {
+          "name": "Volonteer",
+          "queryList": [
+            {
+              "queryAlias": "searchVolonteer",
+              "queryName": "searchVolonteer",
+              "queryType": "_E_Volonteer",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "nickName",
+                  "fieldName": "nickName",
+                  "fieldPath": "nickName",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "person",
+                  "fieldName": "person",
+                  "fieldPath": "person",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_PersonReference"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateVolonteer",
+              "mutationName": "getForUpdateVolonteer",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createVolonteer",
+              "mutationName": "createVolonteer",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "nickName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "person",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Person",
+                        "refEntityName": "_G_PersonReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateVolonteer",
+              "mutationName": "updateVolonteer",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "nickName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "person",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Person",
+                        "refEntityName": "_G_PersonReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "nickName",
+                  "fieldName": "nickName",
+                  "fieldPath": "nickName",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "person",
+                  "fieldName": "person",
+                  "fieldPath": "person",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_PersonReference"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteVolonteer",
+              "mutationName": "deleteVolonteer",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": [
+            {
+              "isCollection": true,
+              "fieldType": "VolonteerEventRequest",
+              "fieldName": "eventBookingList",
+              "backRefereceAttributeName": "volonteer"
+            }
+          ]
+        },
+        {
+          "name": "VolonteerEventRequest",
+          "queryList": [
+            {
+              "queryAlias": "searchVolonteerEventRequest",
+              "queryName": "searchVolonteerEventRequest",
+              "queryType": "_E_VolonteerEventRequest",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Volonteer"
+                },
+                {
+                  "fieldAlias": "description",
+                  "fieldName": "description",
+                  "fieldPath": "description",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "event",
+                  "fieldName": "event",
+                  "fieldPath": "event",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_EventReference"
+                    }
+                  ]
+                },
+                {
+                  "fieldAlias": "statusForX",
+                  "fieldName": "statusForX",
+                  "fieldPath": "statusForX",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "code",
+                      "fieldName": "code",
+                      "fieldPath": "code",
+                      "fieldType": "String"
+                    },
+                    {
+                      "fieldAlias": "reason",
+                      "fieldName": "reason",
+                      "fieldPath": "reason",
+                      "fieldType": "String"
+                    }
+                  ]
+                },
+                {
+                  "fieldAlias": "volonteer",
+                  "fieldName": "volonteer",
+                  "fieldPath": "volonteer",
+                  "fieldType": "Volonteer"
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateVolonteerEventRequest",
+              "mutationName": "getForUpdateVolonteerEventRequest",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createVolonteerEventRequest",
+              "mutationName": "createVolonteerEventRequest",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "description",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "event",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Organization",
+                        "refEntityName": "_G_EventReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "rootEntityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "statusForX",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_G_SysStatusFields"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "code",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "reason",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "volonteer",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Volonteer",
+                        "refEntityName": "Volonteer"
+                      },
+                      "inputType": "ID"
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateVolonteerEventRequest",
+              "mutationName": "updateVolonteerEventRequest",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "description",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "event",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Organization",
+                        "refEntityName": "_G_EventReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "rootEntityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "statusForX",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_G_SysStatusFields"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "code",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "reason",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "volonteer",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Volonteer",
+                        "refEntityName": "Volonteer"
+                      },
+                      "inputType": "ID"
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Volonteer"
+                },
+                {
+                  "fieldAlias": "description",
+                  "fieldName": "description",
+                  "fieldPath": "description",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "event",
+                  "fieldName": "event",
+                  "fieldPath": "event",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_EventReference"
+                    }
+                  ]
+                },
+                {
+                  "fieldAlias": "statusForX",
+                  "fieldName": "statusForX",
+                  "fieldPath": "statusForX",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "code",
+                      "fieldName": "code",
+                      "fieldPath": "code",
+                      "fieldType": "String"
+                    },
+                    {
+                      "fieldAlias": "reason",
+                      "fieldName": "reason",
+                      "fieldPath": "reason",
+                      "fieldType": "String"
+                    }
+                  ]
+                },
+                {
+                  "fieldAlias": "volonteer",
+                  "fieldName": "volonteer",
+                  "fieldPath": "volonteer",
+                  "fieldType": "Volonteer"
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteVolonteerEventRequest",
+              "mutationName": "deleteVolonteerEventRequest",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": []
+        }
+      ]
+    }
+  ]
+}

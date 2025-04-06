@@ -1,0 +1,43 @@
+fragment OrganizationAttributes on _E_Organization {
+  id
+  __typename
+  name
+}
+
+query searchOrganization($cond: String) {
+  searchOrganization(cond: $cond) {
+    elems {
+      ...OrganizationAttributes
+    }
+  }
+}
+
+mutation getForUpdateOrganization($id: ID!) {
+  packet {
+    getOrganization(id: $id) {
+      ...OrganizationAttributes
+    }
+  }
+}
+
+mutation createOrganization($input: _CreateOrganizationInput!) {
+  packet {
+    createOrganization(input: $input) {
+      ...OrganizationAttributes
+    }
+  }
+}
+
+mutation updateOrganization($input: _UpdateOrganizationInput!) {
+  packet {
+    updateOrganization(input: $input) {
+      ...OrganizationAttributes
+    }
+  }
+}
+
+mutation deleteOrganization($id: ID!) {
+  packet {
+    deleteOrganization(id: $id)
+  }
+}

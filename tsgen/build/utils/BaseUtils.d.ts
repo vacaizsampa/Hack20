@@ -1,0 +1,12 @@
+import { DocumentNode, FieldDefinitionNode, InputObjectTypeDefinitionNode, ObjectTypeDefinitionNode } from "graphql";
+export declare const toLowerCaseFirstLetter: (str: string) => string;
+export declare const toUpperCaseFirstLetter: (str: string) => string;
+export declare const isDictionaryDefinition: (node: ObjectTypeDefinitionNode) => boolean;
+export declare const isAggregateRootDefinition: (node: ObjectTypeDefinitionNode) => Boolean;
+export declare const extractBusinessObjectTypeNodeList: (astNode: DocumentNode) => readonly ObjectTypeDefinitionNode[];
+export declare const extractInputObjectTypeNodeList: (astNode: DocumentNode) => readonly InputObjectTypeDefinitionNode[];
+export declare const extractInputObjectTypeForObjectType: (inputObjectTypeNodeList: readonly InputObjectTypeDefinitionNode[], objectTypeNode: ObjectTypeDefinitionNode, inputPrefix?: string | undefined) => InputObjectTypeDefinitionNode | undefined;
+export declare const extractNodeBusinessFieldList: (node: ObjectTypeDefinitionNode) => readonly FieldDefinitionNode[];
+export declare const extractEntityName: (name: string) => string;
+export declare const extractNodeAggregateName: (node: ObjectTypeDefinitionNode) => string;
+export declare const extractEmbeddedObjectTypeNodeList: (astNode: DocumentNode) => readonly ObjectTypeDefinitionNode[];

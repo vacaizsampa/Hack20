@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Панель администратора</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Боковая панель */
+    .sidebar {
+      width: 240px;
+      background-color: #2f3542;
+      color: #fff;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .sidebar h2 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #70a1ff;
+    }
+
+    .nav-link {
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      background-color: #57606f;
+    }
+
+    .nav-link.active {
+      background-color: #3742fa;
+    }
+
+    /* Основной контент */
+    .main {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      color: #2f3542;
+    }
+
+    .user-info {
+      font-size: 1rem;
+      color: #57606f;
+    }
+
+    /* Карточки статистики */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #2f3542;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #3742fa;
+    }
+
+    /* Таблица */
+    .table-section {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+    }
+
+    thead {
+      background-color: #f1f2f6;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+      background-color: #e1f0ff;
+    }
+
+    th {
+      color: #2f3542;
+      font-weight: 600;
+    }
+
+    td {
+      color: #57606f;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .main {
+        padding: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Админ Панель</h2>
+    <div class="nav-link active">📊 Главная</div>
+    <div class="nav-link">👥 Пользователи</div>
+    <div class="nav-link">📦 Заказы</div>
+    <div class="nav-link">💬 Обратная связь</div>
+    <div class="nav-link">⚙ Настройки</div>
+    <div class="nav-link">🚪 Выход</div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Рабочее место администратора</h1>
+      <div class="user-info">👤 Администратор</div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Пользователей</h3>
+        <p>1,204</p>
+      </div>
+      <div class="card">
+        <h3>Активных заказов</h3>
+        <p>321</p>
+      </div>
+      <div class="card">
+        <h3>Обращений</h3>
+        <p>98</p>
+      </div>
+      <div class="card">
+        <h3>Доход</h3>
+        <p>₽245,000</p>
+      </div>
+    </div>
+
+    <div class="table-section">
+      <h2 style="margin-bottom: 15px; color:#2f3542;">Список пользователей</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Статус</th>
+            <th>Дата регистрации</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#001</td>
+            <td>Иван Петров</td>
+            <td>ivan@mail.ru</td>
+            <td>Активен</td>
+            <td>2024-05-10</td>
+          </tr>
+          <tr>
+            <td>#002</td>
+            <td>Елена Смирнова</td>
+            <td>elena@mail.ru</td>
+            <td>Заблокирован</td>
+            <td>2024-06-18</td>
+          </tr>
+          <tr>
+            <td>#003</td>
+            <td>Михаил Иванов</td>
+            <td>misha@mail.ru</td>
+            <td>Активен</td>
+            <td>2024-07-03</td>
+          </tr>
+          <tr>
+            <td>#004</td>
+            <td>Ольга Романова</td>
+            <td>olga@mail.ru</td>
+            <td>Активен</td>
+            <td>2024-08-21</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
